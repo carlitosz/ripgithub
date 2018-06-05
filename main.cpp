@@ -5,6 +5,7 @@ using namespace std;
 // User defined classes.
 // ============================================================================
 #include "Hash.h"
+#include "Queue.h"
 
 // ============================================================================
 // Function prototypes.
@@ -26,11 +27,21 @@ int main(void) {
         switch (input) {
             case 0:
                 break;
-            case 1:
+            case 1: {
                 Hash hashObj;
                 hashObj.execute();
                 hashObj.summary();
                 break;
+            }
+            case 2: {
+                cout << endl << "Nothing to execute... :(" << endl << endl;
+                break;
+            }
+            case 3: {
+                Queue queueObj;
+                queueObj.execute();
+                break;
+            }
         }
     }
 
