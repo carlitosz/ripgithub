@@ -31,6 +31,20 @@ class GenerateData {
 
             return randomStr;
         }
+
+        // ====================================================================
+        // Generates N short ints in a vector.
+        // ====================================================================
+        vector<short int> generateShorts(int n) {
+            vector<short int> vec(n);
+
+            for (int i = 0; i < n; ++i) {
+                short int r = rand();
+                vec[i] = r;
+            }
+
+            return vec;
+        }
 };
 
 #endif /* GENERATE_DATA_H */
