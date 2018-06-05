@@ -9,12 +9,13 @@ using namespace std;
 #include "Queue.h"
 #include "SelectionSort.h"
 #include "MergeSort.h"
+#include "Graph.h"
 
 // ============================================================================
 // Globals
 // ============================================================================
 // Change this var to sort different N (option 4)
-const int TOP_N_TO_SORT = 200000;
+const int TOP_N_TO_SORT = 1000;
 
 // ============================================================================
 // Function prototypes.
@@ -82,11 +83,40 @@ int main(void) {
 
                     printResults(milliseconds);
                 }
+
+                break;
+            }
+            case 5:
+                cout << endl << "Nothing to execute... :(" << endl << endl;
+                break;
+            case 6: {
+                int n = 7; // Number of cities
+                Graph g(n);
+                // SFO 0, DFW 1, LAX 2, ORD 3, JFK 4, MIA 5, BOS 6
+                g.addEdge(0, 2, 338);
+                g.addEdge(0, 6, 2703);
+                g.addEdge(0, 1, 1463);
+                g.addEdge(0, 3, 1847);
+                g.addEdge(1, 3, 801);
+                g.addEdge(1, 5, 1122);
+                g.addEdge(2, 1, 1234);
+                g.addEdge(2, 5, 2341);
+                g.addEdge(3, 4, 741);
+                g.addEdge(4, 6, 188);
+                g.addEdge(5, 4, 1081);
+                g.addEdge(5, 6, 1257);
             }
         }
     }
 
     return 0;
+}
+
+// ============================================================================
+// Adds edge in a directed graph.
+// ============================================================================
+void addEdge(vector<int> adj[], int u, int v) {
+    adj[u].push_back(v);
 }
 
 // ============================================================================
