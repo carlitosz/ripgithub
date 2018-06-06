@@ -16,6 +16,7 @@ using namespace std;
 // ============================================================================
 // Change this var to sort different N (option 4)
 const int TOP_N_TO_SORT = 1000;
+const int RANDOM_STRINGS = 512;
 
 // ============================================================================
 // Function prototypes.
@@ -86,9 +87,24 @@ int main(void) {
 
                 break;
             }
-            case 5:
-                cout << endl << "Nothing to execute... :(" << endl << endl;
+            case 5: {
+                BinarySearchTree *tree = new BinarySearchTree();
+                cout << endl << "Filling binary tree with " << RANDOM_STRINGS
+                     << " random strings." << endl;
+                for (int i = 0; tree->getSize() < RANDOM_STRINGS; ++i) {
+                    tree->insert();
+                }
+
+                cout << "There are now " << tree->getSize() << " strings "
+                     << "in the tree." << endl << endl;
+
+                cout << "Searching..." << endl << endl;
+                for (int i = 0; i < RANDOM_STRINGS; ++i) {
+                    tree->search();
+                }
+
                 break;
+            }
             case 6: {
                 int n = 7; // Number of cities
                 Graph g(n);

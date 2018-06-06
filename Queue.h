@@ -28,6 +28,7 @@ const int CUSTOMER_COUNT = 23;
 #include "Clerk.h"
 #include "Colors.h"
 #include "Customer.h"
+#include "BinarySearchTree.h"
 
 // ==== Queue =================================================================
 // The queue class creates a queue and measures the average wait time for
